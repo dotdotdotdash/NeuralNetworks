@@ -2,67 +2,42 @@
 clear all
 
 %% Generate Clusters
-% Seeds
-seed1=1;
-seed2=2;
-seed3=3;
-seed4=4;
 
-seed5=5;
-seed6=6;
-seed7=7;
-seed8=8;
+% Training and Testing clusters for d = 2
+[Train1D2,Train2D2,Test1D2,Test2D2]=GenerateClusters(2);
+% Training and Testing clusters for d = -4
+[Train1Dn4,Train2Dn4,Test1Dn4,Test2Dn4]=GenerateClusters(-4);
+% Training and Testing clusters for d = -8
+[Train1Dn8,Train2Dn8,Test1Dn8,Test2Dn8]=GenerateClusters(-8);
 
-% Variables from Project Description
-r=10;
-w=6;
-d=2; % d=2,-4 -8
 
-% Cluster 1 Training (Rho-Magnitude Theta-angle[rad])
-rng(seed1,'twister');
-Cluster1RhoTrain = (r-w/2)+w*rand(1,1000);
-rng(seed2,'twister');
-Cluster1ThetaTrain = pi*rand(1,1000);
-
-% Cluster 2 Training (Rho-Magnitude Theta-angle[rad])
-rng(seed3,'twister');
-Cluster2RhoTrain = (r-w/2)+w*rand(1,1000);
-rng(seed4,'twister');
-Cluster2ThetaTrain = -pi*rand(1,1000);
-
-% Cluster 1 Testing (Rho-Magnitude Theta-angle[rad])
-rng(seed5,'twister');
-Cluster1RhoTest = (r-w/2)+w*rand(1,1000);
-rng(seed6,'twister');
-Cluster1ThetaTest = pi*rand(1,1000);
-
-% Cluster 2 Testing (Rho-Magnitude Theta-angle[rad])
-rng(seed7,'twister');
-Cluster2RhoTest = (r-w/2)+w*rand(1,1000);
-rng(seed8,'twister');
-Cluster2ThetaTest = -pi*rand(1,1000);
-
-% Convert to Carteasian Coordinate system
-[Cluster1XTrain Cluster1YTrain] = pol2cart(Cluster1ThetaTrain,Cluster1RhoTrain);
-[Cluster2XTrain Cluster2YTrain] = pol2cart(Cluster2ThetaTrain,Cluster2RhoTrain);
-[Cluster1XTest Cluster1YTest] = pol2cart(Cluster1ThetaTest,Cluster1RhoTest);
-[Cluster2XTest Cluster2YTest] = pol2cart(Cluster2ThetaTest,Cluster2RhoTest);
-
-% Shift Cluster2
-Cluster2XTrain=Cluster2XTrain+r;
-Cluster2YTrain=Cluster2YTrain-d;
-Cluster2XTest=Cluster2XTest+r;
-Cluster2YTest=Cluster2YTest-d;
-
+%% Plot Clusters
 figure(1)
 hold on
 grid on
-scatter(Cluster1XTrain,Cluster1YTrain,20,[.8 .6 .6],'filled')
-scatter(Cluster2XTrain,Cluster2YTrain,20,[.6 .6 .8],'filled')
+scatter(Train1D2(1,:),Train1D2(2,:),20,[.8 .6 .6],'filled')
+scatter(Train2D2(1,:),Train2D2(2,:),20,[.6 .6 .8],'filled')
+scatter(Test1D2(1,:),Test1D2(2,:),20,'r','filled')
+scatter(Test2D2(1,:),Test2D2(2,:),20,'b','filled')
+legend('Cluster 1 Training','Cluster 2 Training','Cluster 1 Testing','Cluster 2 Testing')
 
-scatter(Cluster1XTest,Cluster1YTest,20,'r','filled')
-scatter(Cluster2XTest,Cluster2YTest,20,'b','filled')
+figure(2)
+hold on
+grid on
+scatter(Train1Dn4(1,:),Train1Dn4(2,:),20,[.8 .6 .6],'filled')
+scatter(Train2Dn4(1,:),Train2Dn4(2,:),20,[.6 .6 .8],'filled')
+scatter(Test1Dn4(1,:),Test1Dn4(2,:),20,'r','filled')
+scatter(Test2Dn4(1,:),Test2Dn4(2,:),20,'b','filled')
+legend('Cluster 1 Training','Cluster 2 Training','Cluster 1 Testing','Cluster 2 Testing')
 
+figure(3)
+hold on
+grid on
+scatter(Train1Dn8(1,:),Train1Dn8(2,:),20,[.8 .6 .6],'filled')
+scatter(Train2Dn8(1,:),Train2Dn8(2,:),20,[.6 .6 .8],'filled')
+scatter(Test1Dn8(1,:),Test1Dn8(2,:),20,'r','filled')
+scatter(Test2Dn8(1,:),Test2Dn8(2,:),20,'b','filled')
+legend('Cluster 1 Training','Cluster 2 Training','Cluster 1 Testing','Cluster 2 Testing')
 
 
 
