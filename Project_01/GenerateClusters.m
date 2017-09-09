@@ -24,15 +24,15 @@ Cluster2ThetaTrain = -pi*rand(1,1000);
 
 % Cluster 1 Testing (Rho-Magnitude Theta-angle[rad])
 rng(seed5,'twister');
-Cluster1RhoTest = (r-w/2)+w*rand(1,1000);
+Cluster1RhoTest = (r-w/2)+w*rand(1,500);
 rng(seed6,'twister');
-Cluster1ThetaTest = pi*rand(1,1000);
+Cluster1ThetaTest = pi*rand(1,500);
 
 % Cluster 2 Testing (Rho-Magnitude Theta-angle[rad])
 rng(seed7,'twister');
-Cluster2RhoTest = (r-w/2)+w*rand(1,1000);
+Cluster2RhoTest = (r-w/2)+w*rand(1,500);
 rng(seed8,'twister');
-Cluster2ThetaTest = -pi*rand(1,1000);
+Cluster2ThetaTest = -pi*rand(1,500);
 
 % Convert to Carteasian Coordinate system
 [Cluster1XTrain, Cluster1YTrain] = pol2cart(Cluster1ThetaTrain,Cluster1RhoTrain);
