@@ -1,7 +1,7 @@
 close all;
 clear all;
 clc;
-rng(10);
+rng(5);
 
 [c1train,c2train,c1test,c2test] = GenerateClusters(-4);
 
@@ -22,9 +22,10 @@ net = train(net,train_set,target);
 train_op = net(train_set);
 
 figure(1)
+hold on;
 scatter(c1train(1,:),c1train(2,:),5,'r','filled');
-hold on;
 scatter(c2train(1,:),c2train(2,:),5,'b','filled');
-hold on;
+hold o
+
 figure(2)
 plotconfusion(target,train_op);

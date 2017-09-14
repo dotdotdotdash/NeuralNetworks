@@ -19,13 +19,14 @@ net = feedforwardnet(3,'traingd');
 net = configure(net,train_set,target);
 net.trainParam.lr = 0.5;
 net = train(net,train_set,target);
+classifier = GenerateBoundary(net);
 train_op = net(train_set);
 
 figure(1)
 hold on;
 scatter(c1train(1,:),c1train(2,:),5,'r','filled');
-scatter(c2train(1,:),c2train(2,:),5,'b','filled');
-
+scatter(c2train(1,:),c2train(2,:),5,'g','filled');
+plot(classifier(1,:),classifier(2,:),'b');
 
 figure(2)
 plotconfusion(target,train_op);
