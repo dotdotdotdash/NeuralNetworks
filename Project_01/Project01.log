@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2017.6.28)  16 SEP 2017 09:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2017.6.28)  16 SEP 2017 10:20
 entering extended mode
 **./Project01.tex
 (Project01.tex
@@ -168,7 +168,7 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen126
 \Gin@req@width=\dimen127
 )
-No file Project01.aux.
+(Project01.aux)
 \openout1 = `Project01.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 352.
@@ -183,6 +183,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 352.
 LaTeX Font Info:    ... okay on input line 352.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 352.
 LaTeX Font Info:    ... okay on input line 352.
+
 -- Lines per column: 56 (exact).
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -239,31 +240,40 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-))
-Runaway argument?
-{\IEEEauthorblockN {Geoffrey Clark} \IEEEauthorblockA {Ira A. Fulton \ETC.
-! File ended while scanning use of \author.
-<inserted text> 
-                \par 
-<*> ./Project01.tex
-                   
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
+)
+** WARNING: \IEEEbiography is locked out when in conference mode (line 456).
 
-! Emergency stop.
-<*> ./Project01.tex
-                   
-*** (job aborted, no legal \end found)
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
 
- 
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+
+] (Project01.aux) ) 
 Here is how much of TeX's memory you used:
- 2454 strings out of 493335
- 40310 string characters out of 3139260
- 100519 words of memory out of 3000000
- 5997 multiletter control sequences out of 15000+200000
- 24710 words of font info for 54 fonts, out of 3000000 for 9000
+ 2470 strings out of 493335
+ 40457 string characters out of 3139260
+ 103519 words of memory out of 3000000
+ 5999 multiletter control sequences out of 15000+200000
+ 33007 words of font info for 62 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 37i,1n,23p,239b,102s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 37i,7n,23p,239b,234s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc
+}<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/time
+s/utmri8a.pfb>
+Output written on Project01.pdf (1 page, 35674 bytes).
+PDF statistics:
+ 23 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
