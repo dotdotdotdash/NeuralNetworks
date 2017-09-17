@@ -8,7 +8,7 @@ rng(10);
 % BackPropagation(c1train,c2train,c1test,c2test);
 % [c1train,c2train,c1test,c2test] = GenerateClusters(-4);
 % BackPropagation(c1train,c2train,c1test,c2test);
-[c1train,c2train,c1test,c2test] = GenerateClusters(-8);
+[c1train,c2train,c1test,c2test] = GenerateClusters(-4);
 BackPropagation(c1train,c2train,c1test,c2test);
 
 function BackPropagation(c1train,c2train,c1test,c2test)
@@ -26,6 +26,7 @@ function BackPropagation(c1train,c2train,c1test,c2test)
     net = feedforwardnet(3,'traingd');
     net = configure(net,train_set,target);
     net.trainParam.lr = 0.5;
+    net.trainParam.epochs = 16000;
     net.divideParam.trainRatio = 0.75;
     net.divideParam.valRatio = 0.25;
     net = train(net,train_set,target);
