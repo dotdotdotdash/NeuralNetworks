@@ -64,7 +64,7 @@ scatter(Test2Dn8(1,:),Test2Dn8(2,:),20,'b','filled')
 
 Test.Algorithms={'traingd','traingdm','trainlm'};
 Test.d=[2,-4,-8];
-Test.Lrate=0.6;
+Test.Lrate=0.7;
 Test.Nneurons=15;
 
 for n=1:length(Test.Algorithms)
@@ -127,13 +127,13 @@ end
 
 figure(1)
 legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
-print('-painters','-deps','D2_Lp6')
+print('-painters','-depsc','D2_Lp7')
 figure(2)
 legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
-print('-painters','-deps','Dn4_Lp6')
+print('-painters','-depsc','Dn4_Lp7')
 figure(3)
 legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
-print('-painters','-deps','Dn8_Lp6')
+print('-painters','-depsc','Dn8_Lp7')
 
 
 
