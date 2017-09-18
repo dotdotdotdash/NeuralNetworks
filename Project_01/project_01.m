@@ -65,7 +65,7 @@ legend('Cluster 1 Training (d=-8)','Cluster 2 Training (d=-8)')
 Test.Algorithms={'traingd','traingdm','trainlm'};
 Test.d=[2,-4,-8];
 Test.Lrate=0.6;
-Test.Nneurons=15;
+Test.Nneurons=18;
 
 for n=1:length(Test.Algorithms)
     for m=1:length(Test.d)
@@ -127,13 +127,13 @@ end
 
 figure(1)
 % legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
-print('-painters','-depsc','ClustersD2')
+% print('-painters','-depsc','ClustersD2')
 figure(2)
 % legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
-print('-painters','-depsc','ClustersDn4')
+% print('-painters','-depsc','ClustersDn4')
 figure(3)
-% legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
-print('-painters','-depsc','ClustersDn8')
+legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
+print('-painters','-depsc','Dn8_Lp6_N18')
 
 
 
