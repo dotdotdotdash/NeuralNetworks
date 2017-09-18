@@ -126,13 +126,13 @@ end
 
 
 figure(1)
-legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogarion with Momentum','Boundary: Levenberg Marquardt')
+legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
 print('-painters','-deps','D2_Lp6')
 figure(2)
-legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogarion with Momentum','Boundary: Levenberg Marquardt')
+legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
 print('-painters','-deps','Dn4_Lp6')
 figure(3)
-legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogarion with Momentum','Boundary: Levenberg Marquardt')
+legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
 print('-painters','-deps','Dn8_Lp6')
 
 
