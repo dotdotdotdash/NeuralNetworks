@@ -1,0 +1,8 @@
+diff a/Project_01/project_01.m b/Project_01/project_01.m	(rejected hunks)
+@@ -1,5 +1,6 @@
+ %% Project 1 Clark Lakshminarayanan Sonawani
+ clear all
++
+ %% Generate Clusters
+ 
+ % Training and Testing clusters for d = 2
