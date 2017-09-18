@@ -1,4 +1,4 @@
-%% Boundary Function 
+%% Boundary Function
 % Function takes about 30s to finish each
 function [trajectory]=GenerateBoundary(net)
 % global check
