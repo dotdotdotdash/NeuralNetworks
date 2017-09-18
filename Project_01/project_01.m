@@ -32,7 +32,7 @@ grid on
 % scatter(Train2D2(1,:),Train2D2(2,:),20,[.6 .6 .8],'filled')
 scatter(Test1D2(1,:),Test1D2(2,:),20,'r','filled')
 scatter(Test2D2(1,:),Test2D2(2,:),20,'b','filled')
-% legend('Cluster 1 Training','Cluster 2 Training','Cluster 1 Testing','Cluster 2 Testing')
+legend('Cluster 1 Training (d=2)','Cluster 2 Training (d=2)')
 
 
 fig2=figure(2)
@@ -44,7 +44,7 @@ grid on
 % scatter(Train2Dn4(1,:),Train2Dn4(2,:),20,[.6 .6 .8],'filled')
 scatter(Test1Dn4(1,:),Test1Dn4(2,:),20,'r','filled')
 scatter(Test2Dn4(1,:),Test2Dn4(2,:),20,'b','filled')
-% legend('Cluster 1 Training','Cluster 2 Training','Cluster 1 Testing','Cluster 2 Testing')
+legend('Cluster 1 Training (d=-4)','Cluster 2 Training (d=-4)')
 
 
 fig3=figure(3)
@@ -56,7 +56,7 @@ grid on
 % scatter(Train2Dn8(1,:),Train2Dn8(2,:),20,[.6 .6 .8],'filled')
 scatter(Test1Dn8(1,:),Test1Dn8(2,:),20,'r','filled')
 scatter(Test2Dn8(1,:),Test2Dn8(2,:),20,'b','filled')
-% legend('Cluster 1 Training','Cluster 2 Training','Cluster 1 Testing','Cluster 2 Testing')
+legend('Cluster 1 Training (d=-8)','Cluster 2 Training (d=-8)')
 
 
 
@@ -64,7 +64,7 @@ scatter(Test2Dn8(1,:),Test2Dn8(2,:),20,'b','filled')
 
 Test.Algorithms={'traingd','traingdm','trainlm'};
 Test.d=[2,-4,-8];
-Test.Lrate=0.7;
+Test.Lrate=0.6;
 Test.Nneurons=15;
 
 for n=1:length(Test.Algorithms)
@@ -126,14 +126,14 @@ end
 
 
 figure(1)
-legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
-print('-painters','-depsc','D2_Lp7')
+% legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
+print('-painters','-depsc','ClustersD2')
 figure(2)
-legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
-print('-painters','-depsc','Dn4_Lp7')
+% legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
+print('-painters','-depsc','ClustersDn4')
 figure(3)
-legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
-print('-painters','-depsc','Dn8_Lp7')
+% legend('Cluster 1 (d=2)','Cluster 2 (d=2)','Boundary: Back Propogation','Boundary: Back Propogation with Momentum','Boundary: Levenberg Marquardt')
+print('-painters','-depsc','ClustersDn8')
 
 
 
