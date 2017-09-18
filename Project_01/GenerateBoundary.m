@@ -27,3 +27,4 @@ for n=1:length(xtest)
     flag=0;
 end
    
+% trajectory=[[-16;-1000] trajectory(1:2,:) [26 1000]];
