@@ -1,12 +1,18 @@
 clear all
 close all
+%% EDITABLE VALUES
+windowSize=10; % Number of data points in the input window
+predictionSize=1; % Number of data points in the  output window
+testSize=30; % Number of data points withheld for testing
+Train.Algorithm='trainlm'; % Algorithm used for training {lm,br}
+Train.Lrate=0.0001; % Learning rate used in training
+Train.Hneurons=10; % Number of neurons used in net
+Train.Niterations=10; % Number of total epochs to run (set low for early stopping)
+
 %% Setup
 % FILENAME='3-project_time series data_students.xlsx';
 % vector=xlsread(FILENAME,strcat('A1:A275'));
 load('data.mat')
-windowSize=10;
-predictionSize=1;
-testSize=30;
 totalSize=windowSize+predictionSize;
 vecLen=length(vector);
 shiftSize=predictionSize-1;
@@ -35,10 +41,6 @@ testData=vector(testStart:testEnd)';
 
 %% Train all
 m=1;
-% Train.Algorithm='trainbr';
-Train.Algorithm='trainlm';
-Train.Lrate=0.0001;
-Train.Hneurons=10;
 
 % prep training input
 order = randperm(length(trainData));
@@ -48,7 +50,7 @@ randtrainData = trainData(:,order);
 net{m} = fitnet(Train.Hneurons,Train.Algorithm);
 net{m} = configure(net{m},randtrainData(1:windowSize,:),randtrainData(windowSize+1:end,:));
 net{m}.trainParam.lr = Train.Lrate;
-net{m}.trainParam.epochs=10;% Number of Iterations
+net{m}.trainParam.epochs=Train.Niterations;% Number of Iterations
 net{m}.divideParam.trainRatio = 0.95;
 net{m}.divideParam.valRatio = 0.05;
 net{m}.divideParam.testRatio = 0.0;
