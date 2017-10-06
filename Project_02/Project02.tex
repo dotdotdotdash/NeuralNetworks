@@ -34,20 +34,19 @@
 
 
 \begin{abstract}
-In this project we were given a time series prediction problem in which 275 data points have been given which are measurements of the physical variable y(n) where n denotes year, the given data can be seen in fig. 1 below. The task is to predict the following 30 data points for y(276),...,y(305). Using Neural Net tool box of MATLAB, we have solved the time series prediction problem by training n-layered neural-net with the (lm) algorithm and using early stopping.
-
-
-
+In this project we were given a time series prediction problem in which 275 data points have been given which are measurements of the physical variable y(n) where n denotes year, the given data can be seen in fig. 1 below. The task is to predict the following 30 data points for y(276),...,y(305). Using Neural Net tool box of MATLAB, we have solved the time series prediction problem by training n-layered neural-net with the (lm or br) algorithm and using early stopping to get the best generalized prediction.
 \end{abstract}
 
 \section{Introduction}
+To solve this time series prediction problem a simple sliding window method was used where the data was broken into smaller vectors which contain an input window of length (i) and a prediction window of length (p). These are then used respectively as the inputs and goals of the neural network.
 
+The time series prediction problem given is a difficult problem for two reasons. First the small amount of training data available means that it is very easy to overfit the data. Second the fact that all 30 data points must be predicted before being compared to ground truth means that in the prediction window is smaller than 30, previous outputs must be used as inputs for the next prediction, this looping can cause instability in testing that does not occur in training. To solve these problems our solution was designed to have the largest generalization possible and the least amount of over fitting.
 
 \section{Approach}
+Our Approach utilized three main areas under which we attempted to produce the best possible results: conditioning, training, and testing.
 
-
-\subsection{Generating Data}
-
+\subsection{Conditioning Data}
+The data is given as a single vector of time series data seen in fig. 1. And is then converted to a series of input and output vectors with a sliding window. Each of the window vectors is then randomized in the sequence so that the neural network can better learn. 
 
 \subsection{Training Data}
 
