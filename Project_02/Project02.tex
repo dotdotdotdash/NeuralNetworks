@@ -38,7 +38,7 @@ In this project we were given a time series prediction problem in which 275 data
 \end{abstract}
 
 \section{Introduction}
-To solve this time series prediction problem a simple sliding window method was used where the data was broken into smaller vectors which contain an input window of length (i) and a prediction window of length (p). These are then used respectively as the inputs and goals of the neural network.
+Artificial Neural networks are universal and highly flexible function approximators in field of cognitive sciences and engineering. In recent years, neural network's applications in finance  and weather forecast which are problems of nothing but the intuitive pattern recognition, classification  have dramatically increased. however,  considering the fact of time series analysis,  the whole process depends on trial and error method. As in this problem we do not have large dataset "in thousands" and higher number of features to generalize our model to for future prediction, we have design method based on our understanding of neural network and MATLAB neural network tool box. To solve this time series prediction problem, a simple sliding window method was used where the data was broken into smaller vectors which contain an input window of length (i) and a prediction window of length (p). These are then used respectively as the inputs and goals of the neural network.
 
 The time series prediction problem given is a difficult problem for two reasons. First the small amount of training data available means that it is very easy to overfit the data. Second the fact that all 30 data points must be predicted before being compared to ground truth means that in the prediction window is smaller than 30, previous outputs must be used as inputs for the next prediction, this looping can cause instability in testing that does not occur in training. To solve these problems our solution was designed to have the largest generalization possible and the least amount of over fitting.
 
@@ -49,9 +49,12 @@ Our Approach utilized three main areas under which we attempted to produce the b
 The data is given as a single vector of time series data seen in fig. 1. And is then converted to a series of input and output vectors with a sliding window. Each of the window vectors is then randomized in the sequence so that the neural network can better learn. 
 
 \subsection{Training Data}
-
+Considering the use of available data for its generalization in future prediction, we have used xxxxxxx algorithm as it gave best results compared to xxxxxxx, xxxxxxx, xxxxxx, xxxxxx. It is based on trial and method in  changing the parameters such as xxxxxxxx,xxxxxxx,xxxxxx,xxxxxx(it can contain algorithm name e.g ''trainlm'', learining rate, momentum if we are using and else) in specifically  training neural net of given data set
 
 \subsection{Testing Data}
+
+Here, we have used the part of training set as testing set in calculating the mean square error of whole circuit.....
+
 
 
 
@@ -62,7 +65,7 @@ The data is given as a single vector of time series data seen in fig. 1. And is 
 
 
 \section{Conclusion}
-
+Considering analysis of our team on given problem, prediction of time series data set based on given data set is highly dependent  number on data set as our method tries to generalized the problems's solution based on minimum number of dataset and randomizing the given dataset in specific number of division set (Guys I need input on this sentence....) so that neural net can be more generalize  as possible to these time series problems.
 
 \begin{IEEEbiography}
 
