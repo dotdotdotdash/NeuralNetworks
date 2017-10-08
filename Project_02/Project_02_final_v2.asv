@@ -110,8 +110,8 @@ fig1.Renderer='Painters';
 set(fig1,'units','points','position',[200,450,1200,300]);
 hold on;grid on;
 title('Neural Net Output vs Given Data');
-xlable('');
-
+xlabel('Time [Year]');
+ylabel('Magnitude');
 xlim([0 310]);
 % plot actual
 plot(vector,'k','lineWidth',2)
@@ -122,10 +122,11 @@ end
 % plot((testStart:testEnd),testData,'Color',[.1 .1 .1],'lineWidth',2)
 plot((testEnd:testEnd+30),test_result(end-30:end),'b','lineWidth',2)
 legend('Time Series Data','Neural Net Output on Training Data','Neural Net Prediction','Location','northwest')
-
+print('-painters','-depsc','figure1')
+print('-painters','-dpdf','figure1')
 %% Final Test Vector
 Best.final_vector=test_result(end-30+1:end)
-
+perform(Best.net)
 
 
 

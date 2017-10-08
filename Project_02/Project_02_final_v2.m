@@ -119,14 +119,14 @@ for i=0:shiftSize
     plot((trainStart+i:trainEnd-shiftSize+i),train_result(i+1,:)','r','lineWidth',1.2);
 end
 % plot(vector,'Color',[.5 .5 .5],'lineWidth',2)
-% plot((testStart:testEnd),testData,'Color',[.1 .1 .1],'lineWidth',2)
-plot((testEnd:testEnd+30),test_result(end-30:end),'b','lineWidth',2)
+plot((testStart:testEnd+29),test_result,'b','lineWidth',2)
+% plot((testEnd:testEnd+30),test_result(end-30:end),'b','lineWidth',2)
 legend('Time Series Data','Neural Net Output on Training Data','Neural Net Prediction','Location','northwest')
-print('-painters','-depsc','figure1')
-print('-painters','-dpdf','figure1')
+print('-painters','-depsc','figure2')
+print('-painters','-dpdf','figure2')
 %% Final Test Vector
 Best.final_vector=test_result(end-30+1:end)
-
+perform(Best.net)
 
 
 
