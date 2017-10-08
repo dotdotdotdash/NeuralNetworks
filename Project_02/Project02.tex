@@ -46,20 +46,17 @@ The time series prediction problem given is a difficult problem for two reasons.
 Our Approach utilized three main areas under which we attempted to produce the best possible results: conditioning, training, and testing.
 
 \subsection{Conditioning Data}
-The data is given as a single vector of time series data seen in fig. 1. And is then converted to a series of input and output vectors with a sliding window. Each of the window vectors is then randomized in the sequence so that the neural network can better learn. 
+The data is given as a single vector of time series data seen in fig. 1. And is then converted to a series of input and output vectors with a sliding window. The window sizes used for the inputs and predictions were of sizes 10 and 1 respectively. The windows were then concatenated into a single vector then, each of the window vectors was randomized in the sequence so that the neural network can better learn. 
 
 \subsection{Training Data}
-Considering the use of available data for its generalization in future prediction, we have used xxxxxxx algorithm as it gave best results compared to xxxxxxx, xxxxxxx, xxxxxx, xxxxxx. It is based on trial and method in  changing the parameters such as xxxxxxxx,xxxxxxx,xxxxxx,xxxxxx(it can contain algorithm name e.g ''trainlm'', learining rate, momentum if we are using and else) in specifically  training neural net of given data set
+Considering the use of available data for its generalization in future prediction, we have used the Bayesian regulation backpropagation algorithm as it gave best results compared to Levenberg-Marquardt backpropagation. In the matlab environment we used the fitnet network with two hidden layers with 10 neurons in the first hidden layer and 5 neurons in the second hidden layer. The fitnet network uses Hyperbolic Tangent function on the hidden layers and a linear function on the output layer. This allows the neural network to adapt to the time series data. Additionally 5\% of the Data vectors were randomly pulled out to use as validation data leaving the other 95\% for training. Early stopping was used with the validation data with a failure number of 50 iterations before the early stopping was executed.
+
+Bayesian regulation backpropagation is a method of training with automated regularization. This should help to prevent overfitting and increase the generalization. When finished training it was found that our network has an effective number of parameters of 103 out of 170. Since it converged to this number over about 50 iterations it is understood that this is a good indicator that the network is not overfitting. 
+
+
 
 \subsection{Testing Data}
-
-Here, we have used the part of training set as testing set in calculating the mean square error of whole circuit.....
-
-
-
-
-
-
+While training during the early stages of this project, it was observed that the random initializations to the order of the data and which data was chosen as validation data dramatically affected how well the network was able to learn and generalize. It was determined that since both the size of the network and the amount of given data are so small, minor changes to the random order of the data have a large impact. To solve this problem the network after training was finished the network was tested against the last 30 data points using the same method as the final prediction in order to predict the last 30 data points. This method allows us to actually compare the prediction of the neural network against real data to see how it will actually perform. The trainins and testing were done repeatedly in order to find the seeded network that produces the lowerst MSE when comparing the prediction to the actual data. Once a sufficiently accurate and generalized prediction was obtained the final prediction was created. An example of this method can be seen in figure 2. below. The output of the final neural network for both training and prediction can be seen in fig. 1 above.
 
 
 

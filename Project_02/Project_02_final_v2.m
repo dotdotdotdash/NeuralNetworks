@@ -122,8 +122,8 @@ end
 % plot((testStart:testEnd),testData,'Color',[.1 .1 .1],'lineWidth',2)
 plot((testEnd:testEnd+30),test_result(end-30:end),'b','lineWidth',2)
 legend('Time Series Data','Neural Net Output on Training Data','Neural Net Prediction','Location','northwest')
-print('-painters','-depsc','Neural Net Output vs Given Data')
-print('-painters','-dpdf','Neural Net Output vs Given Data')
+print('-painters','-depsc','figure1')
+print('-painters','-dpdf','figure1')
 %% Final Test Vector
 Best.final_vector=test_result(end-30+1:end)
 
