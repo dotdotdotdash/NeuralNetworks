@@ -84,7 +84,7 @@ hold on;grid on;
 plot(vector,'Color',[.5 .5 .5],'lineWidth',2)
 plot((testStart:testEnd),testData,'Color',[.1 .1 .1],'lineWidth',2)
 % plot results
-% for o=0:predictionSize-1
+% for o=0:predictionSize-
 %     plot((trainStart+o:trainEnd+o),train_result(o+1,:),'b','lineWidth',2)
 % end
 for i=0:shiftSize
