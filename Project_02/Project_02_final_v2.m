@@ -126,7 +126,7 @@ print('-painters','-depsc','figure2')
 print('-painters','-dpdf','figure2')
 %% Final Test Vector
 Best.final_vector=test_result(end-30+1:end)
-perform(Best.net)
+
 
 
 
