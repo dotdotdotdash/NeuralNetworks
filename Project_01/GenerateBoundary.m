@@ -2,7 +2,7 @@
 % Function takes about 30s to finish each
 function [trajectory]=GenerateBoundary(net)
 xtest=(-15:1:25);
-ytest=(-2:.1:15);
+ytest=(-15:.1:15);
 temp=0;
 flag=0;
 
@@ -15,7 +15,7 @@ for n=1:length(xtest)
             check=net([xtest(n);ytest(m)]);
             if check>=.5
                 trajectory(1:2,n)=[xtest(n);ytest(m)];
-                temp=(ytest(m)-1:.1:ytest(m)+3);
+                temp=(ytest(m)-1:.1:ytest(m)+5);
             end
         else
             flag=1;
