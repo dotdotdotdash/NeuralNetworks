@@ -4,6 +4,12 @@ close all
 
 %% Generate Clusters
 
+% % Training and Testing clusters for d = 2
+% [Train1D2,Train2D2,Test1D2,Test2D2]=GenerateClusters(2);
+% % Training and Testing clusters for d = -4
+% [Train1Dn4,Train2Dn4,Test1Dn4,Test2Dn4]=GenerateClusters(-4);
+% % Training and Testing clusters for d = -8
+% [Train1Dn8,Train2Dn8,Test1Dn8,Test2Dn8]=GenerateClusters(-8);
 r=10;
 w=6;
 
@@ -82,9 +88,6 @@ Test1Dn8=[Cluster1XTest;Cluster1YTest];
 Test2Dn8=[Cluster2XTest;Cluster2YTest];
 
 
-
-
-
 % % Organize Data in Clusters
 TrainData={Train1D2,Train2D2;
            Train1Dn4,Train2Dn4;
@@ -151,7 +154,6 @@ Test1.xvec=(-15:1:25);
 Test1.yvec=(15:-1:-15);
 Test1.grid=zeros(length(Test1.yvec),length(Test1.xvec));
 [Test1.X,Test1.Y]=meshgrid(Test1.xvec,Test1.yvec);
-
 %% Train Experiment1
 for n=1:length(Test1.Algorithms)
     for o=1:length(Test1.Lrate)
