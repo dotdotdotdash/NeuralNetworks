@@ -3,7 +3,7 @@
 \usepackage{ graphicx}
 \usepackage{hyperref}
 \usepackage[section]{placeins}
-
+\usepackage[utf8]{inputenc}
 
 
 
@@ -11,7 +11,7 @@
 \begin{document}
 
 \title{Project 1}
-
+\normalsize
 \author{\IEEEauthorblockN{Geoffrey Clark}
 	\IEEEauthorblockA{Ira A. Fulton Schools of Engineering\\
 		Arizona State University\\
@@ -51,21 +51,21 @@ In data analysis, a fundimental Property of many data sets is the presence of No
 
 \subsection{Generating Data}
 In order to generate clusters of 1000 data points, we have used Mersenne Twister \cite{twister} generator. Here the initial part of code generates cluster of 2000 training data sets and 1000 test data sets for each of the separation distantces d equals 2,-4, and -8 units. Each data set consists of: an x coordinate, a y coordinate, and a binary value denoting the cluster the point belongs to. The data is first produced in the form of polar coordinates which are then converted into rectangular coordinates. The generated data clusters have width of 6 units and radius of 10 units. here, we have taken care of data seeds for all training data sets. Furthermore, to maintain randomness in data generation, each training and test data sets have different seeds\cite{rng}. Generated clusters for different Separation distances can be visualized in figure 1, figure 2, Figure 3. 
-\begin{figure}
+\begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{ClustersD2.eps} }\\
+{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{ClustersD2.eps} }\\
 \caption{ Visualization of Clusters with separation of 2 units}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{ClustersDn4.eps} }\\
+{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{ClustersDn4.eps} }\\
 \caption{ Visualization of Clusters with separation of -4 units}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{ClustersDn8.eps} }\\
+{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{ClustersDn8.eps} }\\
 \caption{ Visualization of Clusters with separation of -8 units}
 \end{figure}
 \subsection{Training Data}
@@ -89,62 +89,67 @@ Levenberg Marquardt Back Propagation is optimal algorithm for least square estim
 \section{Results}
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{Exp1_DB2.eps} }\\
+{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp1_DB2.eps} }\\
 \caption{Response of Neural Network in terms of decision boundary for cluster with separation distance of 2 units }
 \end{figure}
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{Exp1_DBn4.eps} }\\
+{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp1_DBn4.eps} }\\
 \caption{Response of Neural Network in terms of decision boundary for cluster with separation distance of -4 units}
 \end{figure}
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{Exp1_DBn8.eps} }\\
+{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp1_DBn8.eps} }\\
 \caption{Response of Neural Network in terms of decision boundary for cluster with separation distance of -8 units}
 \end{figure}
-\begin{figure}
+\begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{Exp1_LC2.eps} }
+{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp1_LC2.eps} }
 \caption{Performance of three different algorithms for three different learning rates in terms of Learning Curve for data set with separation distance of 2 units }
 \end{figure}
-\begin{figure}
+\begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{Exp1_LCn4.eps} }\\
+{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp1_LCn4.eps} }\\
 \caption{Performance of three different algorithms for three different learning rates in terms of Learning Curve for data set with separation distance of 2 units}
 \end{figure}
-\begin{figure}
+\begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{Exp1_LCn8.eps} }\\
+{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp1_LCn8.eps} }\\
 \caption{Performance of three different algorithms for three different learning rates in terms of Learning Curve for data set with separation distance of 2 units}
 \end{figure}
-\begin{figure}
+\begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{Exp2_DBn8.eps} }\\
+{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp2_DBn8.eps} }\\
 \caption{Response of Neural Network in terms of decision boundary  and different numbers of neurons for cluster with separation distance of -8 units}
 \end{figure}
-\begin{figure}
+\begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{Exp2_LCn8.eps} }\\
+{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp2_LCn8.eps} }\\
 \caption{Performance of neural network with threedifferent algorithms and three different number of hiddenneurons in terms of Learning Curve for data set withseparation distance of -8 units }
 \end{figure}
-\begin{figure}
+\begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{Confusion_Matrix_Summary_d2.png} }\\
+{\includegraphics[width=1in,height=1.5in,clip,keepaspectratio]{Confusion_Matrix_Summary_d2.png} }\\
 \caption{Confusion Matrix Summary of Clusters with Separation distance d= 2 for different conditions}
 \end{figure}
-\begin{figure}
+\begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{Confusion_Matrix_Summary_d4.png} }\\
+{\includegraphics[width=1in,height=1.5in,clip,keepaspectratio]{Confusion_Matrix_Summary_d4.png} }\\
 \caption{Confusion Matrix Summary of Clusters with Separation distance d= -4 for different conditions}
 \end{figure}
-\begin{figure}
+\begin{figure}[h!]
 \centering
-{\includegraphics[width=3in,height=2in,clip,keepaspectratio]{Confusion_Matrix_Summary_d8.png} }\\
+{\includegraphics[width=1in,height=1.5in,clip,keepaspectratio]{Confusion_Matrix_Summary_d8.png} }\\
 \caption{Confusion Matrix Summary of Clusters with Separation distance d= -8 for different conditions}
 \end{figure}
 
-\section{Conclusion}
+\begin{figure}[h!]
+\centering
+{\includegraphics[width=1in,height=1.5in,clip,keepaspectratio]{Cms_dn.png} }\\
+\caption{Confusion Matrix Summary of Clusters with Separation distance d= -8 for different  number of Neurons}
+\end{figure}
 
+\section{Conclusion}
 From this project, we understood how to implement back propagation algorithm and the merits and demerits of different algorithms such as back propagation with momentum and levenberg marquardt algorithm. A three layer neural network with enough neurons are enough to solve this classification problem but for even more complicated data sets which are not separable by a linear classifier, a more different sophisticated approach is required.
 }
 
