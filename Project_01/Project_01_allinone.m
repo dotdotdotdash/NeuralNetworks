@@ -108,7 +108,6 @@ fig2=figure(2);
 fig2.Renderer='Painters';
 set(fig2,'units','points','position',[200,200,700,600])
 hold on;grid on;
-
 scatter(Test1Dn4(1,:),Test1Dn4(2,:),20,'r','filled')
 scatter(Test2Dn4(1,:),Test2Dn4(2,:),20,'b','filled')
 
@@ -187,6 +186,8 @@ for n=1:length(Test1.Algorithms)
 
             % testing algorithm
             order = randperm(1000);
+            target=[ones(1,500) zeros(1,500)];
+            target=target(:,order);
             testing_set = [TestData{m,1},TestData{m,2}];
             testing_set = testing_set(:,order);
             test_op = net1{m,n,o}(testing_set);
@@ -212,6 +213,20 @@ for n=1:length(Test1.Algorithms)
             plot(TR.epoch,TR.vperf,Test1.C{n,o},'lineWidth',1)
             xlim([0 2000]);
             ylim([0 .2]);
+            
+            for i=1:1000
+                 if(test_op(i)>=0.5)
+                    test_op(i)=1;
+                 else
+                     test_op(i)=0;
+                 end
+            end
+            
+            
+            plotconfusion(target,test_op);
+            
+            
+            pause;
         end
     end
 end
@@ -262,6 +277,8 @@ for n=1:length(Test2.Algorithms)
 
             % testing algorithm
             order = randperm(1000);
+            target=[ones(1,500) zeros(1,500)];
+            target=target(:,order);
             testing_set = [TestData{m,1},TestData{m,2}];
             testing_set = testing_set(:,order);
             test_op = net2{m,n,o}(testing_set);
@@ -286,14 +303,25 @@ for n=1:length(Test2.Algorithms)
             plot(TR.epoch,TR.vperf,Test2.C{n,o},'lineWidth',1)
             xlim([0 2000]);
             ylim([0 .2]);
+            for i=1:1000
+                 if(test_op(i)>=0.5)
+                    test_op(i)=1;
+                 else
+                     test_op(i)=0;
+                 end
+            end
+            
+            
+            plotconfusion(target,test_op);
+            pause;
         end
     end
 end
+%%
 
 
-
-%% Save Graphs
-%Experiment 1
+% Save Graphs
+% Experiment 1
 figure(1)
 title('Decision Boundaries for Clusters D=2','FontSize',15)
 ldg1=legend( 'Cluster 1 (d=2)','Cluster 2 (d=2)',....
