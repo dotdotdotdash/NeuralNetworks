@@ -1,8 +1,8 @@
-%% Project 1 Clark Lakshminarayanan Sonawani
+% Project 1 Clark Lakshminarayanan Sonawani
 clear all
 close all
 
-%% Generate Clusters
+% Generate Clusters
 
 % Training and Testing clusters for d = 2
 [Train1D2,Train2D2,Test1D2,Test2D2]=GenerateClusters(2);
@@ -22,7 +22,7 @@ TestData={Test1D2,Test2D2;
 
 
 
-%% Plot Clusters
+% Plot Clusters
 fig1=figure(1);
 fig1.Renderer='Painters';
 set(fig1,'units','points','position',[200,200,700,600])
@@ -67,7 +67,7 @@ fig8=figure(8);
 fig8.Renderer='Painters';
 set(fig8,'units','points','position',[860,200,700,600])
 
-%% Setup Experiment 1
+% Setup Experiment 1
 Test1.Algorithms={'traingd','traingdm','trainlm'};
 Test1.C={'-r','--r',':r';'-g','--g',':g';'-b','--b',':b'};
 Test1.d=[2,-4,-8];
@@ -78,7 +78,7 @@ Test1.yvec=(15:-1:-15);
 Test1.grid=zeros(length(Test1.yvec),length(Test1.xvec));
 [Test1.X,Test1.Y]=meshgrid(Test1.xvec,Test1.yvec);
 
-%% Train Experiment1
+% Train Experiment1
 for n=1:length(Test1.Algorithms)
     for o=1:length(Test1.Lrate)
         for m=1:length(Test1.d)
@@ -142,7 +142,7 @@ for n=1:length(Test1.Algorithms)
 end
 
 
-%% Setup Experiment 2
+% Setup Experiment 2
 Test2.Algorithms={'traingd','traingdm','trainlm'};
 Test2.C={'-r','--r',':r';'-g','--g',':g';'-b','--b',':b'};
 Test2.d=[2,-4,-8];
@@ -153,7 +153,7 @@ Test2.yvec=(15:-1:-15);
 Test2.grid=zeros(length(Test2.yvec),length(Test2.xvec));
 [Test2.X,Test2.Y]=meshgrid(Test2.xvec,Test2.yvec);
 
-%% Train Experiment2
+% Train Experiment2
 for n=1:length(Test2.Algorithms)
     for o=1:length(Test2.Nneurons)
         for m=3:length(Test2.d)
@@ -217,7 +217,7 @@ end
 
 
 
-%% Save Graphs
+% Save Graphs
 %Experiment 1
 figure(1)
 title('Decision Boundaries for Clusters D=2','FontSize',15)
