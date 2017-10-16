@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Approach}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Generating Data}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Training Data}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Testing Data}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Experiment I}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Basic Back Propagation}{subsection.2.4}% 7
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Back Propagation with Momentum}{subsection.2.4}% 8
+\BOOKMARK [3][-]{subsubsection.2.4.3}{Levenberg-Marquardt Back Propagation}{subsection.2.4}% 9
+\BOOKMARK [2][-]{subsection.2.5}{Experiment II}{section.2}% 10
+\BOOKMARK [1][-]{section.3}{Results}{}% 11
+\BOOKMARK [1][-]{section.4}{Conclusion}{}% 12
+\BOOKMARK [1][-]{section*.1}{References}{}% 13
