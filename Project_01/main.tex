@@ -53,58 +53,55 @@ In data analysis, a fundimental Property of many data sets is the presence of No
 In order to generate clusters of 1000 data points, we have used Mersenne Twister \cite{twister} generator. Here the initial part of code generates cluster of 2000 training data sets and 1000 test data sets for each of the separation distantces d equals 2,-4, and -8 units. Each data set consists of: an x coordinate, a y coordinate, and a binary value denoting the cluster the point belongs to. The data is first produced in the form of polar coordinates which are then converted into rectangular coordinates. The generated data clusters have width of 6 units and radius of 10 units. here, we have taken care of data seeds for all training data sets. Furthermore, to maintain randomness in data generation, each training and test data sets have different seeds\cite{rng}. Generated clusters for different Separation distances can be visualized in figure 1, figure 2, Figure 3. 
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{ClustersD2.eps} }\\
+{\includegraphics[width=3in, height=1.5in, clip, keepaspectratio]{ClustersD2.eps} }\\
 \caption{ Visualization of Clusters with separation of 2 units}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{ClustersDn4.eps} }\\
+{\includegraphics[width=3in, height=1.5in, clip, keepaspectratio]{ClustersDn4.eps} }\\
 \caption{ Visualization of Clusters with separation of -4 units}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[b!]
 \centering
-{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{ClustersDn8.eps} }\\
+{\includegraphics[width=3in, height=1.5in,clip,keepaspectratio]{ClustersDn8.eps} }\\
 \caption{ Visualization of Clusters with separation of -8 units}
 \end{figure}
 \subsection{Training Data}
 We are using a three layer neural networks with first layer as input layer , second layer as a hidden layer and third as output layer. With the goal of producing a non linear classifier on the data shown in fig. 1:3, we trained the network using three different back propagation functions available in MATLAB neural net toolbox. For basic back propagation we have used 'traingd' (Gradient Descend Back Propagation)\cite{gd} \cite{mgd}, for back propagation with momentum we have used 'trainrp' (Resilient Back Propagation Algorithm )\cite{gdm} \cite{mgdm}and for Levenberg Marquardt we have used 'trainlm' (Levenberg Marquardt )\cite{lm} \cite{mlm}. In this case, we have set the 75\% of training data is for training and 25\% is used for validation. Furthermore, We have trained the network with the different learning rate values of: 1.6, 0.9, and 0.2  for all three separation distances of 2, -4, -8. Lastly early stopping at 2000 iterations was used for all networks.
-
 \subsection{Testing Data}
  Here, we have generated 1000 testing data points for clusters d=2, d=-4 and d=-8. Figures 4, 5, and 6 show the trained neural networks for the three different algorithms and three different learning rates. The performance curves for each neural network can be seen in figures 7, 8, and 9. Below we discuss the algorithms performance on the data.
 \subsection{Experiment I}
 \subsubsection{Basic Back Propagation}
  Now consider simple back propagation algorithm, we are using 'traingd'( Gradient Descend Algorithm)\cite{mgd} available in MATLAB Neural Net toolbox \cite{bpm}. we have set the number of units in hidden layer to 3. Here, we can visualize the response of single hidden layer neural network trained with different learning rates in fig. 4:9.
- \\
 \subsubsection{Back Propagation with Momentum}
 Here, We are using resilient back propagation algorithm available in MATLAB Neural Net tool box. Important parameter that we have to focused on is momentum rate of back propagation algorithm\cite{gdm} \cite{mgdm}. Due to addition of momentum rate, there is attenuation in oscillation of gradient descent \cite{gdm} . thus, we have tested the output of neural network trained with back propagation algorithm having momentum rate of "0.9" and response can be visulaized in terms of decision boundary in fig. 4:9\\
-
 \subsubsection{Levenberg-Marquardt Back Propagation}
 Levenberg Marquardt Back Propagation is optimal algorithm for least square estimation when we deal with non linear decision boundaries\cite{lm}. as per the given problem, we have used 'trainlm' (Levenberg Marquardt ) \cite{mlm} parameter available in MATLAB neural net tool box. Response of neural net with  Levenberg-Marquardt algorithm can be in fig. 4:9.
 
 \subsection{Experiment II}
-{ Initially we trained neural network with single hidden layer with three different back propagation algorithm and learning rates. however, in this part of experiment, we are restricting data set to cluster with separation distance of -8.Untill now, we have not changed the number of units (neurons) in hidden layers which indirectly was restriction on performance of neural network to complext data set (d=-8). But by changing  number of  units in hidden layer to 2, 5 and 11 we can visualize the change and improvement in performance using learning curves and decision boundaries shown in fig. 10 and fig. 11   }
+{ Initially we trained neural network with single hidden layer with three different back propagation algorithm and learning rates. however, in this part of experiment, we are restricting data set to cluster with separation distance of -8. Untill now, we have not changed the number of units (neurons) in hidden layers which indirectly was restriction on performance of neural network to complex data set (d=-8). But by changing  number of  units in hidden layer to 2, 5 and 11 we can visualize the change and improvement in performance using learning curves and decision boundaries shown in fig. 10 and fig. 11   }
 \FloatBarrier
 \section{Results}
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp1_DB2.eps} }\\
+{\includegraphics[width=3in,height=1.5in,clip,keepaspectratio]{Exp1_DB2.eps} }\\
 \caption{Response of Neural Network in terms of decision boundary for cluster with separation distance of 2 units }
 \end{figure}
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp1_DBn4.eps} }\\
+{\includegraphics[width=3in,height=1.5in,clip,keepaspectratio]{Exp1_DBn4.eps} }\\
 \caption{Response of Neural Network in terms of decision boundary for cluster with separation distance of -4 units}
 \end{figure}
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp1_DBn8.eps} }\\
+{\includegraphics[width=3in,height=1.5in,clip,keepaspectratio]{Exp1_DBn8.eps} }\\
 \caption{Response of Neural Network in terms of decision boundary for cluster with separation distance of -8 units}
 \end{figure}
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp1_LC2.eps} }
+{\includegraphics[width=3in,height=1.5in,clip,keepaspectratio]{Exp1_LC2.eps} }
 \caption{Performance of three different algorithms for three different learning rates in terms of Learning Curve for data set with separation distance of 2 units }
 \end{figure}
 \begin{figure}[h!]
@@ -125,58 +122,41 @@ Levenberg Marquardt Back Propagation is optimal algorithm for least square estim
 \begin{figure}[h!]
 \centering
 {\includegraphics[width=2in,height=1.5in,clip,keepaspectratio]{Exp2_LCn8.eps} }\\
-\caption{Performance of neural network with threedifferent algorithms and three different number of hiddenneurons in terms of Learning Curve for data set withseparation distance of -8 units }
+\begin{center}
+\caption{Performance of neural network with three different algorithms and three different number of hidden neurons in terms of Learning Curve for data set with separation distance of -8 units }
+\end{center}
 \end{figure}
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=1in,height=1.5in,clip,keepaspectratio]{Confusion_Matrix_Summary_d2.png} }\\
+{\includegraphics[width=3in,height=1.5in,clip,keepaspectratio]{Confusion_Matrix_Summary_d2.png} }\\
 \caption{Confusion Matrix Summary of Clusters with Separation distance d= 2 for different conditions}
 \end{figure}
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=1in,height=1.5in,clip,keepaspectratio]{Confusion_Matrix_Summary_d4.png} }\\
+{\includegraphics[width=3in,height=1.5in,clip,keepaspectratio]{Confusion_Matrix_Summary_d4.png} }\\
 \caption{Confusion Matrix Summary of Clusters with Separation distance d= -4 for different conditions}
 \end{figure}
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=1in,height=1.5in,clip,keepaspectratio]{Confusion_Matrix_Summary_d8.png} }\\
+{\includegraphics[width=3in,height=1.5in,clip,keepaspectratio]{Confusion_Matrix_Summary_d8.png} }\\
 \caption{Confusion Matrix Summary of Clusters with Separation distance d= -8 for different conditions}
 \end{figure}
-
 \begin{figure}[h!]
 \centering
-{\includegraphics[width=1in,height=1.5in,clip,keepaspectratio]{Cms_dn.png} }\\
+{\includegraphics[width=3in,height=1.5in,clip,keepaspectratio]{Cms_dn.png} }\\
+\begin{center}
 \caption{Confusion Matrix Summary of Clusters with Separation distance d= -8 for different  number of Neurons}
+\end{center}
 \end{figure}
 
 \section{Conclusion}
-From this project, we understood how to implement back propagation algorithm and the merits and demerits of different algorithms such as back propagation with momentum and levenberg marquardt algorithm. A three layer neural network with enough neurons are enough to solve this classification problem but for even more complicated data sets which are not separable by a linear classifier, a more different sophisticated approach is required.
+From this project, we understood how to implement back propagation algorithm with the merits and demerits of different algorithms such as back propagation with momentum and levenberg marquardt algorithm. A three layer neural network will solve the problem as long as the data is linearly separable, which means that the neural network model acts as a linear classifier. But as the data starts to overlap deep, it might not have 100\% classification as depicted by the confusion matrix. Increasing the number of hidden layers might increase the performance but comes with a cost that the model might overfit the data and lose generality.\\
+From this project, we also learned how different learning rates affects the performance of the neural network. Another important factor witnessed during the training of the network with different learning rates was the behavior of the cost function minimization. For certain learning rates, the training algorithms had high error while approaching global minima and then dropped again for some learning rates. This shows that early stopping might be an efficient way, inorder to yield better results. Even more sophisticated techniques like support vector machines might improve the results by a significant standard.
 }
-
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
-%\begin{thebibliography}{1}
-%
-%\bibitem{Multilayer Neural Networks and Back Propagation} 
-%{Multilayer Neural Networks and Back Propagation }\\
-% \url{https://www.mathworks.com/help/nnet/ug/multilayer-neural-networks-and-backpropagation-training.html}
-% 
-%\bibitem{}
-%{Levenberg-Marquardt Algorithm}\\
-%\url{https://www.mathworks.com/help/nnet/ref/trainlm.html}
-%
-%\bibitem{} 
-%{Gradient Descend Back Propagation Algorithm}\\
-%\url{}{https://www.mathworks.com/help/nnet/ref/traingd.html} 
-%
-%\bibitem{} {Resilient Back Propagation Algorithm}\\
-%\url{https://www.mathworks.com/help/nnet/ref/trainrp.html}
-%\bibitem{} 
-%{Hugo Larochelle - Back Propagation}\\
-%\url{https://www.youtube.com/watch?v=_KoWTD8T45Q&list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH&index=13} 
-%
-%\end{thebibliography}
+
 
 \end{document}
 
