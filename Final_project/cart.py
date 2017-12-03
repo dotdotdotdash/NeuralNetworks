@@ -1,5 +1,4 @@
 """
-Classic cart-pole system implemented by Rich Sutton et al.
 Copied from http://incompleteideas.net/sutton/book/code/pole.c
 permalink: https://perma.cc/C9ZM-652R
 """
@@ -30,7 +29,7 @@ class CartPoleEnv(gym.Env):
         self.uc_friction=0.0005 #coefficient of friction of cart on track
         self.up_friction=0.000002
         self.tau = 0.02  # seconds between state updates
-       
+
         # Angle at which to fail the episode
         self.theta_threshold_radians = 12 * 2 * math.pi / 360
         self.x_threshold = 2.4
@@ -54,27 +53,32 @@ class CartPoleEnv(gym.Env):
     def _seed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
-    def _sgn(self): #neeed  sigmoid function
-        if self.x_dot>0:
-            self.x_dot=1
-        elif self.x_dot==0:
-            self.x_dot=0
+    def sgn(self,x_dot): #neeed  sigmoid function
+        if x_dot>0:
+            x_dot=1
+        elif x_dot==0:
+            x_dot=0
         else:
-            self.x_dot=-1
-        return self.x_dot
+            x_dot=-1
+        return x_dot
 
 
     def _step(self, action):
-        assert self.action_space.contains(action), "%r (%s) invalid"%(action, type(action))
+        assert self.action_space.contains(action), "%r (%s) invalid"%(action, typ
+e(action))
         state = self.state
         x, x_dot, theta, theta_dot = state
-        
+
         force = self.force_mag if action==1 else -self.force_mag
         costheta = math.cos(theta)
         sintheta = math.sin(theta)
-        temp = (force + self.polemass_length * theta_dot * theta_dot * sintheta - uc_friction * sgn(x_dot)) / self.total_mass # added uc and sigmoid
-        thetaacc = (self.gravity * sintheta - costheta* temp - up_friction * theta_dot/self.polemass_length) / (self.length * (4.0/3.0 - self.masspole * costheta * costheta / self.total_mass))# added up
-        xacc  = temp - self.polemass_length * thetaacc * costheta / self.total_mass
+        temp = (force + self.polemass_length * theta_dot * theta_dot * sintheta -
+ self.uc_friction * self.sgn(x_dot)) / self.total_mass # added uc and sigmoid
+        thetaacc = (self.gravity * sintheta - costheta* temp - self.up_friction *
+ theta_dot/self.polemass_length) / (self.length * (4.0/3.0 - self.masspole * cost
+heta * costheta / self.total_mass))# added up
+        xacc  = temp - self.polemass_length * thetaacc * costheta / self.total_ma
+ss
         x  = x + self.tau * x_dot
         x_dot = x_dot + self.tau * xacc
         theta = theta + self.tau * theta_dot
@@ -94,12 +98,18 @@ class CartPoleEnv(gym.Env):
             reward = 1.0
         else:
             if self.steps_beyond_done == 0:
-                logger.warning("You are calling 'step()' even though this environment has already returned done = True. You should always call 'reset()' once you receive 'done = True' -- any further steps are undefined behavior.")
+                logger.warning("You are calling 'step()' even though this environ
+ment has already returned done = True. You should always call 'reset()' once you
+receive 'done = True' -- any further steps are undefined behavior.")
             self.steps_beyond_done += 1
             reward = 0.0
 
         return np.array(self.state), reward, done, {}
 
+    def _reset(self):
+        self.state = self.np_random.uniform(low=-0.05, high=0.05, size=(4,))
+        self.steps_beyond_done = None
+        return np.array(self.state)
     def _reset(self):
         self.state = self.np_random.uniform(low=-0.05, high=0.05, size=(4,))
         self.steps_beyond_done = None
